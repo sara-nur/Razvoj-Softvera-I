@@ -1,0 +1,26 @@
+
+# === Visual Studio / Rider ===
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# === Build fajlovi (.NET) ===
+bin/
+obj/
+out/
+
+# === Angular / Node ===
+node_modules/
+dist/
+package-lock.json
+
+# === Logs & temp ===
+*.log
+*.tmp
+*.vsidx
+
+# === OS fajlovi ===
+.DS_Store
+Thumbs.db
