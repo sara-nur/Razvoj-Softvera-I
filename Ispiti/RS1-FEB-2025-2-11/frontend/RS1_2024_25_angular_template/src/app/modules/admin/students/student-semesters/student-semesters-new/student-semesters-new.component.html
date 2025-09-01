@@ -1,0 +1,66 @@
+@if (student) {
+  <h1>{{ 'SEMESTERS.NEW_FOR' | translate:{ name: student.firstName + ' ' + student.lastName } }}</h1>
+}
+
+<form [formGroup]="semesterForm" (ngSubmit)="InsertSemester()">
+  <!-- Winter Semester -->
+  <div>
+    <label for="winterSemester">{{ 'SEMESTERS.WINTER_SEMESTER' | translate }}:</label>
+    <input type="date" formControlName="winterSemester" id="winterSemester" required />
+    <div *ngIf="semesterForm.get('winterSemester')?.invalid && semesterForm.get('winterSemester')?.touched">
+      <div *ngIf="semesterForm.get('winterSemester')?.errors as errors">
+        <small *ngIf="errors['required']">{{ 'VALIDATION.REQUIRED' | translate:{ field: ('SEMESTERS.WINTER_SEMESTER' | translate) } }}</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Year of Study -->
+  <div>
+    <label for="yearOfStudy">{{ 'SEMESTERS.YEAR_OF_STUDY' | translate }}:</label>
+    <input (change)="renewalCheck()" type="number" formControlName="yearOfStudy" id="yearOfStudy" required />
+    <div *ngIf="semesterForm.get('yearOfStudy')?.invalid && semesterForm.get('yearOfStudy')?.touched">
+      <div *ngIf="semesterForm.get('yearOfStudy')?.errors as errors">
+        <small *ngIf="errors['required']">{{ 'VALIDATION.REQUIRED' | translate:{ field: ('SEMESTERS.YEAR_OF_STUDY' | translate) } }}</small>
+        <small *ngIf="errors['min']">{{ 'VALIDATION.MIN' | translate }}</small>
+        <small *ngIf="errors['max']">{{ 'VALIDATION.MAX' | translate }}</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Academic Year Dropdown -->
+  <div>
+    <label for="academicYearId">{{ 'SEMESTERS.ACADEMIC_YEAR' | translate }}:</label>
+    <select formControlName="academicYearId" id="academicYearId" required (change)="CheckAcademicYear()">
+      <option *ngFor="let country of aYears" [value]="country.id">
+        {{ country.description }}
+      </option>
+    </select>
+    <div *ngIf="semesterForm.get('academicYearId')?.invalid && semesterForm.get('academicYearId')?.touched">
+      <div *ngIf="semesterForm.get('academicYearId')?.errors as errors">
+        <small *ngIf="errors['required']">{{ 'VALIDATION.REQUIRED' | translate:{ field: ('SEMESTERS.ACADEMIC_YEAR' | translate) } }}</small>
+      </div>
+      <div *ngIf="semesterForm.get('academicYearId')?.hasError('duplicate')">
+        <small class="text-danger">{{ 'VALIDATION.UNIQUE_AY' | translate }}</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tuition -->
+  <div>
+    <label for="tuition">{{ 'SEMESTERS.TUITION' | translate }}:</label>
+    <input type="number" formControlName="tuition" id="tuition" required />
+  </div>
+
+  <!-- Renewal -->
+  <div>
+    <label for="renewal">{{ 'SEMESTERS.RENEWAL' | translate }}:</label>
+    <input type="checkbox" formControlName="renewal" id="renewal" />
+  </div>
+
+  <!-- Buttons -->
+  <div>
+    <button type="submit">{{ 'COMMON.SAVE' | translate }}</button>
+    <button (click)="cancle()" type="button">{{ 'COMMON.CANCEL' | translate }}</button>
+  </div>
+</form>
+

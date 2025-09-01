@@ -1,0 +1,43 @@
+{
+  "APP": {
+    "TITLE": "Welcome to our app",
+    "DESCRIPTION": "This is an example of localization."
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "USERNAME_LABEL": "Username:",
+    "USERNAME_PLACEHOLDER": "Enter username",
+    "PASSWORD_LABEL": "Password:",
+    "PASSWORD_PLACEHOLDER": "Enter password",
+    "SAVE_LOGIN": "Save login",
+    "BUTTON": "Login"
+  },
+  "STUDENT": {
+    "ID": "ID",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "NOT_FOUND": "No student found"
+  },
+  "SEMESTERS": {
+    "NO_DATA": "No semesters to display.",
+    "ID": "ID",
+    "ACADEMIC_YEAR": "Academic year",
+    "YEAR_OF_STUDY": "Year of study",
+    "RENEWAL": "Renewal",
+    "WINTER_SEMESTER": "Winter semester",
+    "RECORDED_BY": "Recorded by",
+    "NEW": "New semester",
+    "NEW_FOR": "New semester for {{name}}"
+
+  },
+    "VALIDATION": {
+    "REQUIRED": "{{field}} is required.",
+    "MIN": "Value is below the minimum allowed.",
+    "MAX": "Value exceeds the maximum allowed.",
+    "UNIQUE_AY" : "You can only enroll in a specific academic year once."
+  },
+  "COMMON": {
+    "SAVE": "Save Changes",
+    "CANCEL": "Cancel"
+  }
+}
