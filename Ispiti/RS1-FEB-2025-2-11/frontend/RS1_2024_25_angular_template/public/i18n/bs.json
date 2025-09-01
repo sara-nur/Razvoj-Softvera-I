@@ -1,0 +1,45 @@
+{
+  "APP": {
+    "TITLE": "Dobrodošli u našu aplikaciju",
+    "DESCRIPTION": "Ovo je primjer lokalizacije."
+  },
+  "LOGIN": {
+    "TITLE": "Prijava",
+    "USERNAME_LABEL": "Korisničko ime:",
+    "USERNAME_PLACEHOLDER": "Unesite korisničko ime",
+    "PASSWORD_LABEL": "Šifra:",
+    "PASSWORD_PLACEHOLDER": "Unesite šifru",
+    "SAVE_LOGIN": "Sačuvaj prijavu",
+    "BUTTON": "Prijavi se"
+  },
+
+    "STUDENT": {
+    "ID": "ID",
+    "FIRST_NAME": "Ime",
+    "LAST_NAME": "Prezime",
+    "NOT_FOUND": "Student nije pronađen"
+  },
+  "SEMESTERS": {
+    "NO_DATA": "Nema semestara za prikaz.",
+    "ID": "ID",
+    "ACADEMIC_YEAR": "Akademska godina",
+    "YEAR_OF_STUDY": "Godina studija",
+    "RENEWAL": "Obnova",
+    "WINTER_SEMESTER": "Zimski semestar",
+    "RECORDED_BY": "Zabilježio",
+    "NEW": "Novi semestar",
+    "NEW_FOR": "Novi semestar za {{name}}"  
+  },
+  
+    "VALIDATION": {
+    "REQUIRED": "{{field}} je obavezno polje.",
+    "MIN": "Vrijednost je manja od minimalne dozvoljene.",
+    "MAX": "Vrijednost je veća od maksimalne dozvoljene.",
+    "UNIQUE_AY" : "Akademska godina se moze upisati samo jednom"
+  },
+  "COMMON": {
+    "SAVE": "Sačuvaj promjene",
+    "CANCEL": "Otkaži"
+  }
+}
+

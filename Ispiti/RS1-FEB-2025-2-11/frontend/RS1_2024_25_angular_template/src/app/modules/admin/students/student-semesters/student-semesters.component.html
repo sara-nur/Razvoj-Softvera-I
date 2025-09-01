@@ -1,0 +1,52 @@
+@if(student){
+  <p>{{ 'STUDENT.ID' | translate }} {{ student.id }}</p>
+  <p>{{ 'STUDENT.FIRST_NAME' | translate }} {{ student.firstName }}</p>
+  <p>{{ 'STUDENT.LAST_NAME' | translate }} {{ student.lastName }}</p>
+
+  <div *ngIf="dataSource.data.length === 0" class="no-data">
+    <p>{{ 'SEMESTERS.NO_DATA' | translate }}</p>
+  </div>
+
+  <table [dataSource]="dataSource!" class="mat-elevation-z8" mat-table matSort>
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'SEMESTERS.ID' | translate }}</mat-header-cell>
+      <mat-cell *matCellDef="let city">{{ city.id }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="academicYear">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'SEMESTERS.ACADEMIC_YEAR' | translate }}</mat-header-cell>
+      <mat-cell *matCellDef="let city">{{ city.description }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="yearOfStudy">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'SEMESTERS.YEAR_OF_STUDY' | translate }}</mat-header-cell>
+      <mat-cell *matCellDef="let city">{{ city.yearOfStudy }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="renewal">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'SEMESTERS.RENEWAL' | translate }}</mat-header-cell>
+      <mat-cell *matCellDef="let city">{{ city.renewal }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="winterSemester">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'SEMESTERS.WINTER_SEMESTER' | translate }}</mat-header-cell>
+      <mat-cell *matCellDef="let city">{{ city.winterSemester }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="recordedBy">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'SEMESTERS.RECORDED_BY' | translate }}</mat-header-cell>
+      <mat-cell *matCellDef="let city">{{ city.recordedBy }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </table>
+
+  <button mat-flat-button (click)="newSemester()">
+    {{ 'SEMESTERS.NEW' | translate }}
+  </button>
+
+} @else {
+  <p>{{ 'STUDENT.NOT_FOUND' | translate }}</p>
+}
